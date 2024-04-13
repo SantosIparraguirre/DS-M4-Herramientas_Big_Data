@@ -40,16 +40,35 @@ Neo4j: http://<IP_Anfitrion>:7474
 
 ## 1) HDFS
 
-En primer lugar nos ubicamos en la carpeta del proyecto
+En primer lugar nos ubicamos en la carpeta del proyecto:
 ```
 cd Proyecto_Integrador
 ```
 
-Ejecutamos la version 1 de docker-compose
+Ejecutamos la version 1 de docker-compose:
 
 ```
 sudo docker-compose -f docker-compose-v1.yml up -d
 ```
 
 ![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/d3180e3d-e995-43fc-b8ad-84ee819e42aa)
+
+Creamos el directorio 'Datasets' dentro del namenode y salimos del mismo:
+
+```
+sudo docker exec -it namenode bash
+```
+
+```
+cd home
+```
+
+```
+mkdir Datasets
+```
+
+```
+exit
+```
+
 
