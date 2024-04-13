@@ -1,4 +1,4 @@
-# PROYECTO INTEGRADOR
+# Proyecto Integrador
 
 Durante esta practica la idea es emular un ambiente de trabajo, desde un área de innovación solicitan construir un MVP(Producto viable mínimo) de un ambiente de Big Data donde se deban cargar unos archivos CSV que anteriormente se utilizaban en un datawarehouse en MySQl, pero ahora en un entorno de Hadoop.
 
@@ -11,7 +11,7 @@ sudo git clone https://github.com/SantosIparraguirre/Proyecto_Integrador.git
 
 ![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/4ff0bc82-e73b-400f-8b6a-413250c7b4ca)
 
-# Entorno Docker con Hadoop, Spark y Hive
+## Entorno Docker con Hadoop, Spark y Hive
 
 Se presenta un entorno Docker con Hadoop (HDFS) y la implementación de:
 * Spark
@@ -40,6 +40,9 @@ Neo4j: http://<IP_Anfitrion>:7474
 
 ## 1) HDFS
 
+
+#### Ejecución de entorno
+
 En primer lugar nos ubicamos en la carpeta del proyecto:
 ```
 cd Proyecto_Integrador
@@ -52,6 +55,8 @@ sudo docker-compose -f docker-compose-v1.yml up -d
 ```
 
 ![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/d3180e3d-e995-43fc-b8ad-84ee819e42aa)
+
+#### Copia de los archivos ubicados en 'Datasets' al contenedor 'namenode'
 
 Creamos el directorio 'Datasets' dentro del namenode y salimos del mismo:
 
@@ -71,4 +76,11 @@ mkdir Datasets
 exit
 ```
 
+![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/97ca34cc-9d7a-4aa3-b5c8-1bf52106ab2e)
 
+
+Ejecutamos el archivo 'Paso00.sh', que contiene los comandos para mover los archivos al namenode:
+
+```
+sudo ./Paso00.sh
+```
