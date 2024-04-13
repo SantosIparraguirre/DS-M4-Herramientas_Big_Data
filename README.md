@@ -107,3 +107,22 @@ Creamos el directorio 'data':
 hdfs dfs -mkdir -p /data
 ```
 
+Pegamos los archivos:
+
+```
+hdfs dfs -put /home/Datasets/* /data
+```
+
+**También podemos ingresar a la interfaz de hadoop para verificar que los archivos esten en el HDFS, utilizando nuestro navegador, pegando la IP de nuestra máquina virtual y luego el puerto :9870.**
+
+Ejemplo:
+
+```
+http://xxx.xxx.x.xxx:9870/
+```
+
+Luego nos dirigimos a *Utilities > Browse the file system*:
+
+![tempsnip](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/9be6d630-f384-4a67-aed1-c6ddd5587bbf)
+
+Si cumpliste con todos estos pasos, debería aparecerte la carpeta data con los archivos .csv dentro de ella.
