@@ -19,8 +19,11 @@ Es importante mencionar que el entorno completo consume muchos recursos de su eq
 
 Como primer paso fundamental, debemos clonar el repositorio en nuestra máquina virtual:
 ```
-https://github.com/SantosIparraguirre/DS-M4-Herramientas_Big_Data.git
+sudo git clone https://github.com/SantosIparraguirre/Proyecto_Integrador.git
 ```
+
+![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/2d209263-466e-46b1-976a-a079a9363aa1)
+
 
 Ejecute `docker network inspect` en la red (por ejemplo, `docker-hadoop-spark-hive_default`) para encontrar la IP en la que se publican las interfaces de hadoop. Acceda a estas interfaces con las siguientes URL:
 
