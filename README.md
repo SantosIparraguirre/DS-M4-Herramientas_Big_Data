@@ -79,8 +79,31 @@ exit
 ![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/97ca34cc-9d7a-4aa3-b5c8-1bf52106ab2e)
 
 
-Ejecutamos el archivo 'Paso00.sh', que contiene los comandos para mover los archivos al namenode:
+Ejecutamos el archivo 'Paso00.sh', que contiene los comandos para copiar los archivos al namenode. Primero modificamos su permiso de ejecución:
+
+```
+sudo chmod +x Paso00.sh
+```
 
 ```
 sudo ./Paso00.sh
 ```
+
+Ingresamos al contenedor 'namenode':
+
+```
+sudo docker exec -it namenode bash
+```
+
+Nos ubicamos en el directorio 'home':
+
+```
+cd home
+```
+
+Creamos el directorio 'data':
+
+```
+hdfs dfs -mkdir -p /data
+```
+
