@@ -4,13 +4,6 @@ Durante esta practica la idea es emular un ambiente de trabajo, desde un área d
 
 Desde la gerencia de Infraestructura no están muy convencidos de utilizar esta tecnología por lo que no se asigno presupuesto alguna para esta iniciativa, de forma tal que por el momento no es posible utilizar un Vendor(Azure, AWS, Google) para implementar dicho entorno, es por esto que todo el MVP se deberá implementar utilizando Docker de forma tal que se pueda hacer una demo al sector de infraestructura mostrando las ventajas de utilizar tecnologías de Big Data.
 
-Como primer paso fundamental, debemos clonar el repositorio en nuestra máquina virtual:
-```
-sudo git clone https://github.com/SantosIparraguirre/Proyecto_Integrador.git
-```
-
-![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/4ff0bc82-e73b-400f-8b6a-413250c7b4ca)
-
 ## Entorno Docker con Hadoop, Spark y Hive
 
 Se presenta un entorno Docker con Hadoop (HDFS) y la implementación de:
@@ -23,6 +16,13 @@ Se presenta un entorno Docker con Hadoop (HDFS) y la implementación de:
 * Kafka
 
 Es importante mencionar que el entorno completo consume muchos recursos de su equipo, motivo por el cuál, se propondrán ejercicios pero con ambientes reducidos, en función de las herramientas utilizadas.
+
+Como primer paso fundamental, debemos clonar el repositorio en nuestra máquina virtual:
+```
+sudo git clone https://github.com/SantosIparraguirre/Proyecto_Integrador.git
+```
+
+![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/4ff0bc82-e73b-400f-8b6a-413250c7b4ca)
 
 Ejecute `docker network inspect` en la red (por ejemplo, `docker-hadoop-spark-hive_default`) para encontrar la IP en la que se publican las interfaces de hadoop. Acceda a estas interfaces con las siguientes URL:
 
