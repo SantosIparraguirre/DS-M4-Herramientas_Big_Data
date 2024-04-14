@@ -333,3 +333,41 @@ CREATE INDEX index_venta_empleado ON TABLE venta(IdEmpleado) AS 'org.apache.hado
 ```
 CREATE INDEX index_cliente ON TABLE cliente(IdCliente) AS 'org.apache.hadoop.hive.ql.index.compact.CompactIndexHandler' WITH DEFERRED REBUILD;
 ```
+
+```
+CREATE INDEX index_venta ON TABLE venta(IdVenta) AS 'org.apache.hadoop.hive.ql.index.compact.CompactIndexHandler' WITH DEFERRED REBUILD;
+```
+
+#### Repetimos las consultas anteriores y comparamos los resultados:
+
+```
+select IdProducto, SUM(Precio * Cantidad) FROM venta GROUP BY IdProducto;
+```
+
+![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/a2ce2608-2de3-4e92-9906-4afc12d27b8b)
+
+
+```
+select IdCliente, SUM(Precio * Cantidad) FROM venta GROUP BY IdCliente;
+```
+
+![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/47e10188-d25e-42f0-971b-bee01bb4986a)
+
+
+```
+select IdCanal, SUM(Precio * Cantidad) FROM venta GROUP BY IdCanal;
+```
+
+![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/3ea2e9b2-f624-4e52-a61f-9d8a2aaaf8f0)
+
+```
+select IdEmpleado, SUM(Precio * Cantidad) FROM venta GROUP BY IdEmpleado;
+```
+
+![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/64d79a80-d790-4191-96ca-4807994e136f)
+
+```
+SELECT v.IdCliente, SUM(v.Precio * v.Cantidad) FROM venta v JOIN cliente c USING (IdCliente) WHERE c.Localidad = 'CIUDAD DE BUENOS AIRES' GROUP BY v.IdCliente;
+```
+
+![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/d2ba14af-911f-4ab1-9210-230270440102)
