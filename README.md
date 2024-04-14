@@ -275,5 +275,38 @@ select COUNT(*) from proveedor;
 
 ## 4) SQL
 
-Probamos algunos índices para mejorar el rendimiento de las consultas:
+Ejecutamos consultas con funciones de agregado en la tabla venta y registramos el tiempo:
 
+```
+select IdProducto, SUM(Precio * Cantidad) FROM venta GROUP BY IdProducto;
+```
+
+![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/79aa8646-0a0e-49e7-93da-b1d3f98e2fe3)
+
+
+```
+select IdCliente, SUM(Precio * Cantidad) FROM venta GROUP BY IdCliente;
+```
+
+![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/51b66f98-2787-4b87-81cf-f062e7ba724e)
+
+
+```
+select IdCanal, SUM(Precio * Cantidad) FROM venta GROUP BY IdCanal;
+```
+
+![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/e7abcf46-9b1b-4e19-a45f-70340daed55b)
+
+
+```
+select IdEmpleado, SUM(Precio * Cantidad) FROM venta GROUP BY IdEmpleado;
+```
+
+![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/c53c71f5-f0e6-4e76-8fe7-191010a03974)
+
+
+```
+SELECT v.IdCliente, SUM(v.Precio * v.Cantidad) FROM venta v JOIN cliente c USING (IdCliente) WHERE c.Localidad = 'CIUDAD DE BUENOS AIRES' GROUP BY v.IdCliente;
+```
+
+![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/73c0944c-c727-4a8f-8e95-8a3482436163)
