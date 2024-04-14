@@ -229,7 +229,7 @@ hive -f Paso03.hql
 
 ### Consultas para verificar que las tablas se crearon y poblaron
 
-Ingresamos a Hive:
+Ingresamos a Hive y seleccionamos la DB 'integrador2':
 
 ```
 hive
@@ -241,6 +241,12 @@ use integrador2;
 
 ```
 show tables;
+```
+
+#### Consultas
+
+```
+select IdTipoGasto, sum(Monto) from gasto group by IdTipoGasto;
 ```
 
 ```
@@ -270,3 +276,5 @@ select * from cliente limit 10;
 ```
 select * from venta limit 10;
 ```
+
+![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/51f3abd8-c5cf-4db3-ad53-9e6c11c3640e)
