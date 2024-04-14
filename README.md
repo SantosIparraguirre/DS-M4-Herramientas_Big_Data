@@ -209,7 +209,7 @@ Vamos a crear una nueva base de datos en la cual vamos a alojar todas las tablas
 Primero, copiamos el archivo 'Paso03.hql' al servidor de Hive:
 
 ```
-sudo docker cp ./Paso02.hql hive-server:/opt/
+sudo docker cp ./Paso03.hql hive-server:/opt/
 ```
 
 Ingresamos al servidor de Hive y ejecutamos el archivo 'Paso03.hql':
