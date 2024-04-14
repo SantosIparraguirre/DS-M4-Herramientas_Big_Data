@@ -271,3 +271,9 @@ select COUNT(*) from proveedor;
 
 
 ![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/51f3abd8-c5cf-4db3-ad53-9e6c11c3640e)
+
+
+## 4) SQL
+
+Probamos algunos índices para mejorar el rendimiento de las consultas:
+
