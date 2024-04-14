@@ -122,7 +122,7 @@ http://xxx.xxx.x.xxx:9870/
 ```
 ***Nota:*** *donde están las x debemos colocar nuestra IP*
 
-Luego nos dirigimos a *Utilities > Browse the file system*:
+Luego nos dirigimos a *Utilities > Browse the file system:*
 
 ![tempsnip](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/9be6d630-f384-4a67-aed1-c6ddd5587bbf)
 
@@ -195,8 +195,37 @@ use integrador;
 select * from venta limit 10;
 ```
 
-***Nota: es importante establecer el parámetro limit ya que la mayoría de las tablas tienen miles de registros***
+***Nota: es importante establecer la cláusula limit ya que la mayoría de las tablas tienen miles de registros***
 
 ![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/23ae6226-a04d-4114-870c-f4019fce5d00)
 
 *Otra opción es entrar a HUE desde nuestro navegador utilizando nuestra IP y el puerto :8888*
+
+
+## 3) Formatos de Almacenamiento
+
+Vamos a crear una nueva base de datos en la cual vamos a alojar todas las tablas creadas en el punto anterior, pero en formato **Parquet + Snappy** aplicando algunas particiones a las tablas.
+
+Primero, copiamos el archivo 'Paso03.hql' al servidor de Hive:
+
+```
+sudo docker cp ./Paso02.hql hive-server:/opt/
+```
+
+Ingresamos al servidor de Hive y ejecutamos el archivo 'Paso03.hql':
+
+```
+sudo docker exec -it hive-server bash
+```
+
+```
+hive -f Paso03.hql
+```
+
+*Recomendación: revisar el script Paso03.hql para comprender que estamos ejecutando*
+
+![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/fdab68e9-0907-45e8-8f6a-4cbd2ff7588a)
+
+
+
+
