@@ -275,7 +275,7 @@ select COUNT(*) from proveedor;
 
 ## 4) SQL
 
-Ejecutamos consultas con funciones de agregado en la tabla venta y registramos el tiempo:
+#### Ejecutamos consultas con funciones de agregado en la tabla venta y registramos el tiempo:
 
 ```
 select IdProducto, SUM(Precio * Cantidad) FROM venta GROUP BY IdProducto;
@@ -310,3 +310,26 @@ SELECT v.IdCliente, SUM(v.Precio * v.Cantidad) FROM venta v JOIN cliente c USING
 ```
 
 ![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/73c0944c-c727-4a8f-8e95-8a3482436163)
+
+
+#### Creamos los índices correspondientes en la tabla venta y cliente:
+
+```
+CREATE INDEX index_venta_producto ON TABLE venta(IdProducto) AS 'org.apache.hadoop.hive.ql.index.compact.CompactIndexHandler' WITH DEFERRED REBUILD;
+```
+
+```
+CREATE INDEX index_venta_cliente ON TABLE venta(IdCliente) AS 'org.apache.hadoop.hive.ql.index.compact.CompactIndexHandler' WITH DEFERRED REBUILD;
+```
+
+```
+CREATE INDEX index_venta_canal ON TABLE venta(IdCanal) AS 'org.apache.hadoop.hive.ql.index.compact.CompactIndexHandler' WITH DEFERRED REBUILD;
+```
+
+```
+CREATE INDEX index_venta_empleado ON TABLE venta(IdEmpleado) AS 'org.apache.hadoop.hive.ql.index.compact.CompactIndexHandler' WITH DEFERRED REBUILD;
+```
+
+```
+CREATE INDEX index_cliente ON TABLE cliente(IdCliente) AS 'org.apache.hadoop.hive.ql.index.compact.CompactIndexHandler' WITH DEFERRED REBUILD;
+```
