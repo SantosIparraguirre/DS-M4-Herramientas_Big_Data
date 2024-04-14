@@ -222,7 +222,7 @@ sudo docker exec -it hive-server bash
 hive -f Paso03.hql
 ```
 
-*Recomendación: revisar el script Paso03.hql para comprender que estamos ejecutando*
+*Recomendación: revisar el script Paso03.hql para ver y comprender los querys que estamos ejecutando*
 
 ![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/fdab68e9-0907-45e8-8f6a-4cbd2ff7588a)
 
