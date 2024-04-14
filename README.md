@@ -134,10 +134,18 @@ Si cumpliste con todos los pasos anteriores, debería aparecerte la carpeta data
 
 ## 2) Hive
 
+#### Ejecución de entorno
+
 Debemos usar el entorno docker-compose-v2, por lo que es necesario detener el anterior, en este caso vamos a detener todos los contenedores:
 
 ```
 sudo docker stop $(sudo docker ps -a -q)
+```
+
+Recuerden que debemos estar en el directorio 'Proyecto_Integrador':
+
+```
+cd Proyecto_Integrador
 ```
 
 Ejecutamos el entorno que necesitamos para este paso:
@@ -147,6 +155,8 @@ sudo docker-compose -f docker-compose-v2.yml up -d
 ```
 
 ![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/14322d92-6425-4063-a797-f3b680ac2cda)
+
+#### Creación y población de las tablas
 
 **Vamos a ejecutar el script 'Paso02.hql' para crear y poblar las tablas, por lo tanto debemos primero copiarlo de nuestra máquina virtual al server de Hive:**
 
@@ -167,3 +177,24 @@ hive -f Paso02.hql
 ```
 
 ![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/241884bc-6caf-4e8f-9389-1c8038568865)
+
+
+**Podemos chequear mediante consultas en hive que todo se haya realizado con éxito:**
+
+Ingresar a Hive:
+```
+hive
+```
+
+Realizar las consultas:
+```
+use integrador;
+```
+
+```
+select * from venta limit 10;
+```
+
+***Nota: es importante establecer el parámetro limit ya que la mayoría de las tablas tienen miles de registros***
+
+![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/23ae6226-a04d-4114-870c-f4019fce5d00)
