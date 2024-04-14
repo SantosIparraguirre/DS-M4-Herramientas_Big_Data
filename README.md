@@ -125,4 +125,41 @@ Luego nos dirigimos a *Utilities > Browse the file system*:
 
 ![tempsnip](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/9be6d630-f384-4a67-aed1-c6ddd5587bbf)
 
-Si cumpliste con todos estos pasos, debería aparecerte la carpeta data con los archivos .csv dentro de ella.
+Si cumpliste con todos los pasos anteriores, debería aparecerte la carpeta data con los archivos .csv dentro de ella.
+
+
+## 2) Hive
+
+Debemos usar el entorno docker-compose-v2, por lo que es necesario detener el anterior, en este caso vamos a detener todos los contenedores:
+
+```
+sudo docker stop $(sudo docker ps -a -q)
+```
+
+Ejecutamos el entorno que necesitamos para este paso:
+
+```
+sudo docker-compose -f docker-compose-v2.yml up -d
+```
+
+![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/14322d92-6425-4063-a797-f3b680ac2cda)
+
+**Vamos a ejecutar el script 'Paso02.hql' para crear y poblar las tablas, por lo tanto debemos primero copiarlo de nuestra máquina virtual al server de Hive:**
+
+```
+sudo docker cp ./Paso02.hql hive-server:/opt/
+```
+
+Ingresamos al server de Hive:
+
+```
+sudo docker exec -it hive-server bash
+```
+
+Ejecutamos el script configurado previamente para crear y poblar las tablas:
+
+```
+hive -f Paso02.hql
+```
+
+![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/241884bc-6caf-4e8f-9389-1c8038568865)
