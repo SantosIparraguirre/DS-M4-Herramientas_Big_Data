@@ -120,7 +120,7 @@ Ejemplo:
 ```
 http://xxx.xxx.x.xxx:9870/
 ```
-
+***Nota:*** *donde están las x debemos colocar nuestra IP*
 Luego nos dirigimos a *Utilities > Browse the file system*:
 
 ![tempsnip](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/9be6d630-f384-4a67-aed1-c6ddd5587bbf)
