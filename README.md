@@ -179,7 +179,7 @@ hive -f Paso02.hql
 ![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/241884bc-6caf-4e8f-9389-1c8038568865)
 
 
-**Podemos chequear mediante consultas en hive que las tablas crearon y poblaron con éxito:**
+**Podemos chequear mediante consultas en hive que las tablas se crearon y poblaron con éxito:**
 
 Ingresar a Hive:
 ```
@@ -261,20 +261,5 @@ select * from calendario limit 10;
 select * from gasto limit 10;
 ```
 
-```
-select * from empleado limit 10;
-```
-
-```
-select * from proveedor limit 10;
-```
-
-```
-select * from cliente limit 10;
-```
-
-```
-select * from venta limit 10;
-```
 
 ![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/51f3abd8-c5cf-4db3-ad53-9e6c11c3640e)
