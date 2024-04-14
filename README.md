@@ -227,5 +227,46 @@ hive -f Paso03.hql
 ![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/fdab68e9-0907-45e8-8f6a-4cbd2ff7588a)
 
 
+### Consultas para verificar que las tablas se crearon y poblaron
 
+Ingresamos a Hive:
 
+```
+hive
+```
+
+```
+use integrador2;
+```
+
+```
+show tables;
+```
+
+```
+select * from tipo_gasto;
+```
+
+```
+select * from calendario limit 10;
+```
+
+```
+select * from gasto limit 10;
+```
+
+```
+select * from empleado limit 10;
+```
+
+```
+select * from proveedor limit 10;
+```
+
+```
+select * from cliente limit 10;
+```
+
+```
+select * from venta limit 10;
+```
