@@ -13,8 +13,7 @@ ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
 WITH SERDEPROPERTIES (
     'separatorChar'=',',
     'skip.header.line.count'='1'
-)
-LOCATION '/data/compra';
+);
 
 DROP TABLE IF EXISTS gasto;
 CREATE EXTERNAL TABLE IF NOT EXISTS gasto (
@@ -28,8 +27,7 @@ ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
 WITH SERDEPROPERTIES (
     'separatorChar'=',',
     'skip.header.line.count'='1'
-)
-LOCATION '/data/gasto';
+);
 
 DROP TABLE IF EXISTS tipo_gasto;
 CREATE EXTERNAL TABLE IF NOT EXISTS tipo_gasto (
@@ -41,8 +39,7 @@ ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
 WITH SERDEPROPERTIES (
     'separatorChar'=',',
     'skip.header.line.count'='1'
-)
-LOCATION '/data/tipodegasto';
+);
 
 DROP TABLE IF EXISTS venta;
 CREATE EXTERNAL TABLE IF NOT EXISTS venta (
@@ -61,8 +58,7 @@ ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
 WITH SERDEPROPERTIES (
     'separatorChar'=',',
     'skip.header.line.count'='1'
-)
-LOCATION '/data/venta';
+);
 
 DROP TABLE IF EXISTS canal_venta;
 CREATE EXTERNAL TABLE IF NOT EXISTS canal_venta (
@@ -73,8 +69,7 @@ ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
 WITH SERDEPROPERTIES (
     'separatorChar'=',',
     'skip.header.line.count'='1'
-)
-LOCATION '/data/canaldeventa';
+);
 
 DROP TABLE IF EXISTS cliente;
 CREATE EXTERNAL TABLE IF NOT EXISTS cliente (
@@ -93,8 +88,7 @@ ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
 WITH SERDEPROPERTIES (
     'separatorChar'=';',
     'skip.header.line.count'='1'
-)
-LOCATION '/data/cliente';
+);
 
 DROP TABLE IF EXISTS producto;
 CREATE EXTERNAL TABLE IF NOT EXISTS producto (
@@ -107,8 +101,7 @@ ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
 WITH SERDEPROPERTIES (
     'separatorChar'=';',
     'skip.header.line.count'='1'
-)
-LOCATION '/data/producto';
+);
 
 DROP TABLE IF EXISTS empleado;
 CREATE EXTERNAL TABLE IF NOT EXISTS empleado (
@@ -124,8 +117,7 @@ ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
 WITH SERDEPROPERTIES (
     'separatorChar'=';',
     'skip.header.line.count'='1'
-)
-LOCATION '/data/empleado';
+);
 
 DROP TABLE IF EXISTS sucursal;
 CREATE EXTERNAL TABLE IF NOT EXISTS sucursal (
@@ -141,8 +133,7 @@ ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
 WITH SERDEPROPERTIES (
     'separatorChar'=';',
     'skip.header.line.count'='1'
-)
-LOCATION '/data/sucursal';
+);
 
 DROP TABLE IF EXISTS calendario;
 CREATE EXTERNAL TABLE calendario (
@@ -160,8 +151,7 @@ ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
 WITH SERDEPROPERTIES (
     'separatorChar'=',',
     'skip.header.line.count'='1'
-)
-LOCATION '/data/calendario';
+);
 
 DROP TABLE IF EXISTS proveedor;
 CREATE EXTERNAL TABLE IF NOT EXISTS proveedor (
@@ -177,5 +167,17 @@ ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
 WITH SERDEPROPERTIES (
     'separatorChar'=',',
     'skip.header.line.count'='1'
-)
-LOCATION '/data/proveedor';
+);
+
+
+LOAD DATA INPATH '/data/Calendario.csv' INTO TABLE integrador.calendario;
+LOAD DATA INPATH '/data/CanalDeVenta.csv' INTO TABLE integrador.canal_venta;
+LOAD DATA INPATH '/data/Cliente.csv' INTO TABLE integrador.cliente;
+LOAD DATA INPATH '/data/Compra.csv' INTO TABLE integrador.compra;
+LOAD DATA INPATH '/data/Empleado.csv' INTO TABLE integrador.empleado;
+LOAD DATA INPATH '/data/Gasto.csv' INTO TABLE integrador.gasto;
+LOAD DATA INPATH '/data/Producto.csv' INTO TABLE integrador.producto;
+LOAD DATA INPATH '/data/Proveedor.csv' INTO TABLE integrador.proveedor;
+LOAD DATA INPATH '/data/Sucursal.csv' INTO TABLE integrador.sucursal;
+LOAD DATA INPATH '/data/TiposDeGasto.csv' INTO TABLE integrador.tipo_gasto; 
+LOAD DATA INPATH '/data/Venta.csv' INTO TABLE integrador.venta;
