@@ -192,7 +192,7 @@ use integrador;
 ```
 
 ```
-select * from venta limit 10;
+select COUNT(*) from venta;
 ```
 
 ***Nota: es importante establecer la cláusula limit ya que la mayoría de las tablas tienen miles de registros***
@@ -254,11 +254,19 @@ select * from tipo_gasto;
 ```
 
 ```
-select * from calendario limit 10;
+select COUNT(*) from calendario;
 ```
 
 ```
-select * from gasto limit 10;
+select COUNT(*) from gasto;
+```
+
+```
+select COUNT(*) from venta;
+```
+
+```
+select COUNT(*) from proveedor;
 ```
 
 
