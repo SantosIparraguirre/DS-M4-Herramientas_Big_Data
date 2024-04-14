@@ -41,7 +41,7 @@ Neo4j: http://<IP_Anfitrion>:7474
 ## 1) HDFS
 
 
-#### Ejecución de entorno
+### Ejecución de entorno
 
 En primer lugar nos ubicamos en la carpeta del proyecto:
 ```
@@ -56,7 +56,7 @@ sudo docker-compose -f docker-compose-v1.yml up -d
 
 ![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/d3180e3d-e995-43fc-b8ad-84ee819e42aa)
 
-#### Copia de los archivos ubicados en 'Datasets' al contenedor 'namenode'
+### Copia de los archivos ubicados en 'Datasets' al contenedor 'namenode'
 
 Creamos el directorio 'Datasets' dentro del namenode y salimos del mismo:
 
@@ -134,7 +134,7 @@ Si cumpliste con todos los pasos anteriores, debería aparecerte la carpeta data
 
 ## 2) Hive
 
-#### Ejecución de entorno
+### Ejecución de entorno
 
 Debemos usar el entorno docker-compose-v2, por lo que es necesario detener el anterior, en este caso vamos a detener todos los contenedores:
 
@@ -156,7 +156,7 @@ sudo docker-compose -f docker-compose-v2.yml up -d
 
 ![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/14322d92-6425-4063-a797-f3b680ac2cda)
 
-#### Creación y población de las tablas
+### Creación y población de las tablas
 
 **Vamos a ejecutar el script 'Paso02.hql' para crear y poblar las tablas, por lo tanto debemos primero copiarlo de nuestra máquina virtual al server de Hive:**
 
