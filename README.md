@@ -179,7 +179,7 @@ hive -f Paso02.hql
 ![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/241884bc-6caf-4e8f-9389-1c8038568865)
 
 
-**Podemos chequear mediante consultas en hive que todo se haya realizado con éxito:**
+**Podemos chequear mediante consultas en hive que las tablas crearon y poblaron con éxito:**
 
 Ingresar a Hive:
 ```
@@ -198,3 +198,5 @@ select * from venta limit 10;
 ***Nota: es importante establecer el parámetro limit ya que la mayoría de las tablas tienen miles de registros***
 
 ![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/23ae6226-a04d-4114-870c-f4019fce5d00)
+
+*Otra opción es entrar a HUE desde nuestro navegador utilizando nuestra IP y el puerto :8888*
