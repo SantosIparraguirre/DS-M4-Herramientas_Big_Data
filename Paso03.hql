@@ -230,7 +230,7 @@ SELECT
 	Sucursal,
 	Sector,
 	Cargo,
-	REPLACE(Salario. ',', '.')
+	REPLACE(Salario, ',', '.')
 FROM integrador.empleado;
 
 DROP TABLE IF EXISTS sucursal;
@@ -280,6 +280,7 @@ SELECT
 	fecha,
 	anio,
 	mes,
+	dia,
 	trimestre,
 	semana,
 	dia_nombre,
