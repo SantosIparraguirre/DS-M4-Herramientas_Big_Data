@@ -291,11 +291,11 @@ DROP TABLE IF EXISTS proveedor;
 CREATE EXTERNAL TABLE IF NOT EXISTS proveedor (
 	IDProveedor			INTEGER,
 	Nombre	VARCHAR(40),
-	Address	VARCHAR(150),
-	City	VARCHAR(80),
-	State	VARCHAR(50),
-	Country	VARCHAR(20),
-	departamen	VARCHAR(50)
+	Direccion	VARCHAR(150),
+	Ciudad	VARCHAR(80),
+	Provincia	VARCHAR(50),
+	Pais	VARCHAR(20),
+	Departamento	VARCHAR(50)
 )
 STORED AS PARQUET
 LOCATION '/data2/proveedor'
@@ -311,45 +311,3 @@ SELECT
 	Pais,
 	Departamento
 FROM integrador.proveedor;
-	
-
-
-
-
-
-
-
---particiones
-DROP TABLE trips_part;
-CREATE EXTERNAL TABLE trips_part(
-	bikeid INT,
-	checkout_time STRING,
-	duration_minutes INT,
-	end_station_id INT,
-	end_station_name STRING,
-	start_station_id INT,
-	start_station_name STRING,
-	start_time TIMESTAMP,
-	subscriber_type STRING,
-	trip_id BIGINT,
-	year INT
-)
-PARTITIONED BY(month INT)
-LOCATION '/user/instructor/data/bikeshare/trips_part/';
-
--- Ejecutar de 1 a 12
-INSERT INTO trips_part
-PARTITION(month=12)
-SELECT bikeid,
-	checkout_time,
-	duration_minutes,
-	end_station_id,
-	end_station_name,
-	start_station_id,
-	start_station_name,
-	start_time,
-	subscriber_type,
-	trip_id,
-	year_modif
-FROM trips_ok
-WHERE month_modif = 12;
