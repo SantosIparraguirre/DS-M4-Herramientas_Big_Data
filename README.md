@@ -126,7 +126,10 @@ Luego nos dirigimos a *Utilities > Browse the file system*:
 
 ![tempsnip](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/9be6d630-f384-4a67-aed1-c6ddd5587bbf)
 
-Si cumpliste con todos los pasos anteriores, debería aparecerte la carpeta data con los archivos .csv dentro de ella.
+Si cumpliste con todos los pasos anteriores, debería aparecerte la carpeta data con los archivos .csv dentro de ella:
+
+![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/0181fe55-f732-4491-be50-c8676fbd6a48)
+
 
 
 ## 2) Hive
