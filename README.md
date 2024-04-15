@@ -43,7 +43,8 @@ Neo4j: http://<IP_Anfitrion>:7474
 
 ## 1) HDFS
 
-![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/52bd0b4c-e8ab-4e7c-9a4a-89f943679155)
+![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/3cc80940-f3e3-44a4-9e92-e47944acb731)
+
 
 
 ### Ejecución de entorno
@@ -139,7 +140,8 @@ Si cumpliste con todos los pasos anteriores, debería aparecerte la carpeta data
 
 ## 2) Hive
 
-![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/59a2c740-7ebf-4fcc-bb87-89085b190ca0)
+![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/9dd71f32-c417-4f24-8c6b-76fd809505b6)
+
 
 
 
