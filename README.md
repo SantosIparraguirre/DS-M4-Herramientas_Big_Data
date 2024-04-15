@@ -1,4 +1,7 @@
-# Proyecto Integrador
+# Proyecto Integrador Big Data
+
+![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/5336c72a-074d-4c55-907b-543c7fd00046)
+
 
 Durante esta practica la idea es emular un ambiente de trabajo, desde un área de innovación solicitan construir un MVP (Producto viable mínimo) de un ambiente de Big Data donde se deban cargar unos archivos CSV que anteriormente se utilizaban en un datawarehouse en MySQl, pero ahora en un entorno de Hadoop.
 
@@ -39,6 +42,8 @@ Neo4j: http://<IP_Anfitrion>:7474
 ```
 
 ## 1) HDFS
+
+![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/52bd0b4c-e8ab-4e7c-9a4a-89f943679155)
 
 
 ### Ejecución de entorno
@@ -134,6 +139,9 @@ Si cumpliste con todos los pasos anteriores, debería aparecerte la carpeta data
 
 ## 2) Hive
 
+![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/65d3bc8a-e3d8-486a-bf6c-015f94e79c01)
+
+
 ### Ejecución de entorno
 
 Debemos usar el entorno docker-compose-v2, por lo que es necesario detener el anterior, en este caso vamos a detener todos los contenedores:
@@ -203,6 +211,9 @@ select COUNT(*) from venta;
 
 
 ## 3) Formatos de Almacenamiento
+
+![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/9775be53-7b81-42d1-8dee-02ecc3f42377)
+
 
 Vamos a crear una nueva base de datos en la cual vamos a alojar todas las tablas creadas en el punto anterior, pero en formato **Parquet + Snappy** aplicando algunas particiones a las tablas.
 
@@ -274,6 +285,9 @@ select COUNT(*) from proveedor;
 
 
 ## 4) SQL
+
+![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/460c831d-2d7f-4e5a-bfce-8a6a8e29890a)
+
 
 #### Ejecutamos consultas con funciones de agregado en la tabla venta y registramos el tiempo:
 
