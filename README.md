@@ -139,7 +139,8 @@ Si cumpliste con todos los pasos anteriores, debería aparecerte la carpeta data
 
 ## 2) Hive
 
-![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/65d3bc8a-e3d8-486a-bf6c-015f94e79c01)
+![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/59a2c740-7ebf-4fcc-bb87-89085b190ca0)
+
 
 
 ### Ejecución de entorno
