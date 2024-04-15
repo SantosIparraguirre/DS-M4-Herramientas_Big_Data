@@ -12,3 +12,7 @@ sudo docker cp ./Datasets/venta/Venta.csv namenode:/home/Datasets/Venta.csv
 sudo docker cp ./Datasets/data_nvo/Cliente.csv namenode:/home/Datasets/Cliente_nvo.csv
 sudo docker cp ./Datasets/data_nvo/Empleado.csv namenode:/home/Datasets/Empleado_nvo.csv
 sudo docker cp ./Datasets/data_nvo/Producto.csv namenode:/home/Datasets/Producto_nvo.csv
+sudo docker cp ./Datasets/iris.csv namenode:/home/Datasets/iris.csv
+sudo docker cp ./Datasets/iris.json namenode:/home/Datasets/iris.json
+sudo docker cp ./Datasets/personal.csv namenode:/home/Datasets/personal.csv
+sudo docker cp ./Datasets/raw-flight-data.csv namenode:/home/Datasets/raw-flight-data.csv
