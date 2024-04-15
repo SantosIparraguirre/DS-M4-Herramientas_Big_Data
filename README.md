@@ -394,7 +394,7 @@ SELECT v.IdCliente, SUM(v.Precio * v.Cantidad) FROM venta v JOIN cliente c USING
 
 5) ## No-SQL
 
-#### Ejecución de entorno
+### Ejecución de entorno
 
 En este caso vamos a utilizar **HBase, MongoDB, Neo4J y Zeppelin** por lo que vamos a detener los contenedores nuevamente:
 
@@ -506,6 +506,9 @@ Ejecutamos la siguiente línea para poblar las tablas con los datos del archivo 
 hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.separator=',' -Dimporttsv.columns=HBASE_ROW_KEY,personal_data:name,personal_data:city,personal_data:age personal hdfs://namenode:9000/hbase/data/personal.csv
 ```
 
+![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/42d403cd-d274-456d-9ef2-9c60e71da304)
+
+
 Ingresamos al shell y ejecutamos las siguientes líneas:
 
 ```
@@ -543,3 +546,73 @@ put 'album','label1','image:source','/tmp/pic1.jpg'
 ```
 get 'album','label1'
 ```
+
+![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/a66d4a4e-650e-4363-81cc-9959456cf61b)
+
+#### 2) MongoDB
+
+Desde la carpeta del proyecto, vamos a Datasets y copiamos los archivos a nuestro contenedor de MongoDB:
+
+```
+cd Datasets
+```
+
+```
+sudo docker cp iris.csv mongodb:/data/iris.csv
+```
+
+```
+sudo docker cp iris.json mongodb:/data/iris.json
+```
+
+Salimos y abrimos un bash en MongoDB:
+
+```
+cd ..
+```
+
+```
+sudo docker exec -it mongodb bash
+```
+
+Importamos los archivos:
+
+```
+mongoimport /data/iris.csv --type csv --headerline -d dataprueba -c iris_csv
+```
+
+```
+mongoimport --db dataprueba --collection iris_json --file /data/iris.json --jsonArray
+```
+
+![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/5355ec2c-82fe-48ec-813f-5a2d76cb3af8)
+
+
+Ingresamos a mongosh y seleccionamos la base de datos 'dataprueba':
+
+```
+mongosh
+```
+
+```
+use dataprueba
+```
+
+![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/e5feffc7-c740-4a31-ac36-75b754d4f5ef)
+
+
+Revisamos el contenido de las colecciones:
+
+```
+show collections
+```
+
+```
+db.iris_csv.find()
+```
+
+```
+db.iris_json.find()
+```
+
+![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/1f73e85f-31b6-4585-953d-ec2453fa0816)
