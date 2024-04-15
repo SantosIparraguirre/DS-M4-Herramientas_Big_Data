@@ -289,7 +289,7 @@ select COUNT(*) from proveedor;
 
 ## 4) SQL
 
-![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/460c831d-2d7f-4e5a-bfce-8a6a8e29890a)
+![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/14d2ca45-14c7-4329-acd6-be4973202113)
 
 
 #### Ejecutamos consultas con funciones de agregado en la tabla venta y registramos el tiempo:
