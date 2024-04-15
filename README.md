@@ -383,8 +383,94 @@ select IdEmpleado, SUM(Precio * Cantidad) FROM venta GROUP BY IdEmpleado;
 
 ![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/64d79a80-d790-4191-96ca-4807994e136f)
 
+
 ```
 SELECT v.IdCliente, SUM(v.Precio * v.Cantidad) FROM venta v JOIN cliente c USING (IdCliente) WHERE c.Localidad = 'CIUDAD DE BUENOS AIRES' GROUP BY v.IdCliente;
 ```
 
 ![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/d2ba14af-911f-4ab1-9210-230270440102)
+
+
+
+5) ## No-SQL
+
+#### Ejecución de entorno
+
+En este caso vamos a utilizar **HBase, MongoDB, Neo4J y Zeppelin** por lo que vamos a detener los contenedores nuevamente:
+
+```
+sudo docker stop $(sudo docker ps -a -q)
+```
+
+Ejecutamos la versión 3 de docker-compose que contiene lo necesario para este paso:
+
+```
+sudo docker-compose -f docker-compose-v3.yml up -d
+```
+
+#### 1) HBase
+
+Ingresamos a HBase:
+
+```
+sudo docker exec -it hbase-master hbase shell
+```
+
+Creamos las siguientes tablas:
+
+```
+create 'personal','personal_data'
+```
+
+```
+list 'personal'
+```
+
+Ingresamos los datos:
+
+```
+put 'personal',1,'personal_data:name','Juan'
+```
+
+```
+put 'personal',1,'personal_data:city','Córdoba'
+```
+
+```
+put 'personal',1,'personal_data:age','25'
+```
+
+```
+put 'personal',2,'personal_data:name','Franco'
+```
+
+```
+put 'personal',2,'personal_data:city','Lima'
+```
+
+```
+put 'personal',2,'personal_data:age','32'
+```
+
+```
+put 'personal',3,'personal_data:name','Ivan'
+```
+
+```
+put 'personal',3,'personal_data:age','34'
+```
+
+```
+put 'personal',4,'personal_data:name','Eliecer'
+```
+
+```
+put 'personal',4,'personal_data:city','Caracas'
+```
+
+Consulta para verificar:
+
+```
+get 'personal','4'
+```
+
