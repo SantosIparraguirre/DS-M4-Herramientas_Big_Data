@@ -410,7 +410,7 @@ sudo docker-compose -f docker-compose-v3.yml up -d
 
 #### 1) HBase
 
-Ingresamos a HBase:
+Ingresamos al shell:
 
 ```
 sudo docker exec -it hbase-master hbase shell
@@ -474,3 +474,72 @@ Consulta para verificar:
 get 'personal','4'
 ```
 
+![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/aaa1d383-67db-4149-a2c1-f82168511241)
+
+```
+exit
+```
+
+Ingresamos al namenode para copiar el archivo 'personal.csv' a nuestra carpeta 'data' ubicada en HBase:
+
+```
+sudo docker exec -it namenode bash
+```
+
+```
+hdfs dfs -put personal.csv /hbase/data/personal.csv
+```
+
+```
+exit
+```
+
+Abrimos un bash en hbase:
+
+```
+sudo docker exec -it hbase-master bash
+```
+
+Ejecutamos la siguiente línea para poblar las tablas con los datos del archivo 'personal.csv':
+
+```
+hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.separator=',' -Dimporttsv.columns=HBASE_ROW_KEY,personal_data:name,personal_data:city,personal_data:age personal hdfs://namenode:9000/hbase/data/personal.csv
+```
+
+Ingresamos al shell y ejecutamos las siguientes líneas:
+
+```
+hbase shell
+```
+
+```
+scan 'personal'
+```
+
+```
+create 'album','label','image'
+```
+
+```
+put 'album','label1','label:size','10'
+```
+
+```
+put 'album','label1','label:color','255:255:255'
+```
+
+```
+put 'album','label1','label:text','Family album'
+```
+
+```
+put 'album','label1','image:name','holiday'
+```
+
+```
+put 'album','label1','image:source','/tmp/pic1.jpg'
+```
+
+```
+get 'album','label1'
+```
