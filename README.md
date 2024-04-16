@@ -616,3 +616,22 @@ db.iris_json.find()
 ```
 
 ![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/1f73e85f-31b6-4585-953d-ec2453fa0816)
+
+
+```
+exit
+```
+
+Ejecutamos las siguientes líneas en el bash para exportar los documentos:
+
+```
+mongoexport --db dataprueba --collection iris_csv --fields sepal_length,sepal_width,petal_length,petal_width,species --type=csv --out /data/iris_export.csv
+```
+
+```
+mongoexport --db dataprueba --collection iris_json --fields sepal_length,sepal_width,petal_length,petal_width,species --type=json --out /data/iris_export.json
+```
+
+![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/b22b1649-6d7a-49cf-8345-8305f03ef528)
+
+
