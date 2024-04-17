@@ -391,8 +391,7 @@ SELECT v.IdCliente, SUM(v.Precio * v.Cantidad) FROM venta v JOIN cliente c USING
 ![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/d2ba14af-911f-4ab1-9210-230270440102)
 
 
-
-5) ## No-SQL
+## 5) No-SQL
 
 ### Ejecución de entorno
 
