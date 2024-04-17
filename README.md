@@ -486,7 +486,7 @@ sudo docker exec -it namenode bash
 ```
 
 ```
-hdfs dfs -put personal.csv /hbase/data/personal.csv
+hdfs dfs -put home/Datasets/personal.csv /hbase/data/personal.csv
 ```
 
 ```
