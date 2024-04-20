@@ -642,27 +642,42 @@ cd Proyecto_Integrador
 ```
 
 
-Copiamos los archivos .jar de la carpeta 'Mongo' al hive:server y al namenode:
-
-```
-sudo docker cp ./Mongo/. namenode:/tmp/hive/
-```
+Copiamos los archivos .jar de la carpeta 'Mongo' a la librería de Hive y al HDFS:
 
 ```
 sudo docker cp ./Mongo/. hive-server:/opt/hive/lib/
 ```
+
+```
+sudo docker cp ./Mongo/. namenode:/tmp/udfs/
+```
+
+```
+sudo docker exec -it namenode bash
+```
+
+```
+cd tmp
+```
+
+```
+cd udfs
+```
+
+```
+hadoop fs -copyFromLocal mongo* /tmp/hive/
+```
+
+```
+exit
+```
+
 
 Verificamos que se hayan copiado bien y tengan permisos de lectura:
 
 ```
 sudo docker exec namenode hadoop fs -ls /tmp/hive/
 ```
-
-```
-sudo docker exec hive-server hadoop fs -ls /tmp/hive/
-```
-
-![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/eee46426-0554-4b48-9a6b-f7dce5465388)
 
 
 Nos vamos a hive-server, iniciamos hiveserver2 e ingresamos a hive:
