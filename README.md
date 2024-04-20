@@ -633,4 +633,60 @@ mongoexport --db dataprueba --collection iris_json --fields sepal_length,sepal_w
 
 ![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/b22b1649-6d7a-49cf-8345-8305f03ef528)
 
+```
+exit
+```
 
+```
+cd Proyecto_Integrador
+```
+
+
+Copiamos los archivos .jar de la carpeta 'Mongo' al hive:server y al namenode:
+
+```
+sudo docker cp ./Mongo/. namenode:/tmp/hive/
+```
+
+```
+sudo docker cp ./Mongo/. hive-server:/opt/hive/lib/
+```
+
+Verificamos que se hayan copiado bien y tengan permisos de lectura:
+
+```
+sudo docker exec namenode hadoop fs -ls /tmp/hive/
+```
+
+```
+sudo docker exec hive-server hadoop fs -ls /tmp/hive/
+```
+
+![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/eee46426-0554-4b48-9a6b-f7dce5465388)
+
+
+Nos vamos a hive-server, iniciamos hiveserver2 e ingresamos a hive:
+
+```
+sudo docker exec -it hive-server bash
+```
+
+```
+hiveserver2
+```
+
+```
+hive
+```
+
+Añadimos los archivos .jar al path:
+
+```
+ADD JAR hdfs://namenode:9000/tmp/hive/mongo-java-driver-3.12.11.jar;
+ADD JAR hdfs://namenode:9000/tmp/hive/mongo-hadoop-core-2.0.2.jar;
+ADD JAR hdfs://namenode:9000/tmp/hive/mongo-hadoop-hive-2.0.2.jar;
+```
+
+![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/9d6670fb-812e-40c3-9c09-43af394b3626)
+
+![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/c97e7c63-3a1c-4b19-8309-9c3c900a6a73)
