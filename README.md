@@ -395,7 +395,7 @@ SELECT v.IdCliente, SUM(v.Precio * v.Cantidad) FROM venta v JOIN cliente c USING
 
 ### Ejecución de entorno
 
-En este caso vamos a utilizar **HBase, MongoDB, Neo4J y Zeppelin** por lo que vamos a detener los contenedores nuevamente:
+En este caso vamos a utilizar **Hive, HBase, MongoDB, Neo4J y Zeppelin** por lo que vamos a detener los contenedores nuevamente:
 
 ```
 sudo docker stop $(sudo docker ps -a -q)
