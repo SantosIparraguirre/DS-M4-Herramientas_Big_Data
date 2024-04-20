@@ -407,7 +407,7 @@ Ejecutamos la versión 3 de docker-compose que contiene lo necesario para este p
 sudo docker-compose -f docker-compose-v3.yml up -d
 ```
 
-#### 1) HBase
+### 1) HBase
 
 Ingresamos al shell:
 
@@ -548,7 +548,7 @@ get 'album','label1'
 
 ![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/a66d4a4e-650e-4363-81cc-9959456cf61b)
 
-#### 2) MongoDB
+### 2) MongoDB
 
 Desde la carpeta del proyecto, vamos a Datasets y copiamos los archivos a nuestro contenedor de MongoDB:
 
