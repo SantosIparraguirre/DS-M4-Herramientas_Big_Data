@@ -685,6 +685,7 @@ Añadimos los archivos .jar al path:
 ADD JAR hdfs://namenode:9000/tmp/hive/mongo-java-driver-3.12.11.jar;
 ADD JAR hdfs://namenode:9000/tmp/hive/mongo-hadoop-core-2.0.2.jar;
 ADD JAR hdfs://namenode:9000/tmp/hive/mongo-hadoop-hive-2.0.2.jar;
+ADD JAR hdfs://namenode:9000/tmp/hive/mongo-hadoop-spark-2.0.2.jar;
 ```
 
 ![image](https://github.com/SantosIparraguirre/Proyecto_Integrador/assets/154923689/9d6670fb-812e-40c3-9c09-43af394b3626)
